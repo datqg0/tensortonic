@@ -4,7 +4,7 @@ def leaky_relu(x, alpha=0.01):
     """
     Vectorized Leaky ReLU implementation.
     """
-    # Write code here
+    """ Write code here
     shape = np.shape(x)
     np_arr = np.array(x,dtype=float);
     np_arr = np_arr.flatten();
@@ -14,4 +14,6 @@ def leaky_relu(x, alpha=0.01):
             tmp=tmp*alpha
         np_arr[i]=tmp;
     x = np_arr.reshape(shape)
-    return x
+    return x"""
+    x = np.asarray(x,dtype=float)
+    return np.where(x<0,alpha*x,x)
